@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rose MedSpa Growth Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#FCFBFA; --surface:#FFFFFF; --surface-2:#F5F1F1;
+  --ink:#231D21; --ink-2:#484145; --muted:#786F74; --line:#EBE5E6; --line-2:#F1ECED;
+  --rose:#A2385A; --rose-soft:#C77E97;
+  --good:#177A54; --good-bg:#EEF6F1; --good-line:#D3E8DD;
+  --alert:#BE382E; --alert-bg:#FBEDEB; --alert-line:#F1D3CF;
+  --shadow-sm:0 1px 2px rgba(35,29,33,.04);
+  --shadow:0 2px 6px rgba(35,29,33,.05), 0 18px 40px -18px rgba(35,29,33,.14);
+  --r:14px; --maxw:1080px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#171215; --surface:#201A1E; --surface-2:#271F24;
+    --ink:#F2EAEE; --ink-2:#D3C7CE; --muted:#A99CA3; --line:#342930; --line-2:#2C232A;
+    --rose:#DD90A8; --rose-soft:#B9758C;
+    --good:#5FCB9C; --good-bg:#15302699; --good-line:#26483C;
+    --alert:#F0908A; --alert-bg:#39201E99; --alert-line:#57312E;
+    --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+    --shadow:0 2px 6px rgba(0,0,0,.3), 0 20px 44px -20px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#171215; --surface:#201A1E; --surface-2:#271F24;
+  --ink:#F2EAEE; --ink-2:#D3C7CE; --muted:#A99CA3; --line:#342930; --line-2:#2C232A;
+  --rose:#DD90A8; --rose-soft:#B9758C;
+  --good:#5FCB9C; --good-bg:#15302699; --good-line:#26483C;
+  --alert:#F0908A; --alert-bg:#39201E99; --alert-line:#57312E;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.3);
+  --shadow:0 2px 6px rgba(0,0,0,.3), 0 20px 44px -20px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Hanken Grotesk",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:16px; line-height:1.62; -webkit-font-smoothing:antialiased; letter-spacing:.002em;
+}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 32px}
+h1,h2,h3{font-family:"Schibsted Grotesk",-apple-system,"Segoe UI",sans-serif; margin:0; text-wrap:balance; letter-spacing:-.025em; font-weight:600}
+p{margin:0}
+.eyebrow{font-family:"Schibsted Grotesk",sans-serif; font-size:12px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--rose)}
+.muted{color:var(--muted)}
+strong{font-weight:600; color:var(--ink)}
+
+/* top bar */
+.topbar{border-bottom:1px solid var(--line)}
+.topbar .wrap{display:flex; align-items:center; justify-content:space-between; padding:20px 32px}
+.brand{display:flex; align-items:center; gap:12px}
+.mark{width:30px;height:30px;border-radius:50%;
+  background:radial-gradient(circle at 33% 30%, var(--rose-soft), var(--rose) 74%)}
+.brand b{font-family:"Schibsted Grotesk",sans-serif; font-weight:600; font-size:15px}
+.brand span{display:block; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-top:1px}
+.tag{font-size:12.5px; color:var(--muted); letter-spacing:.02em}
+
+/* section frame */
+section{padding:64px 0}
+.sec-head{max-width:none; margin-bottom:38px}
+.sec-head .eyebrow{display:block; margin-bottom:14px}
+.sec-head h2{font-size:clamp(24px,3vw,34px); line-height:1.1; max-width:18ch}
+.sec-head .sub{margin-top:14px; color:var(--muted); font-size:16px; max-width:56ch}
+
+/* hero */
+.hero .wrap{padding-top:74px; padding-bottom:30px;
+  display:grid; grid-template-columns:1.12fr .88fr; gap:60px; align-items:center}
+.hero .eyebrow{margin-bottom:20px; display:block}
+.hero h1{font-size:clamp(34px,5vw,58px); line-height:1.03; font-weight:700; letter-spacing:-.035em}
+.hero h1 .accent{color:var(--rose)}
+.hero .lede{margin-top:24px; font-size:18px; line-height:1.6; color:var(--ink-2); max-width:40ch}
+.hero .lede strong{color:var(--ink); font-weight:600}
+
+/* snapshot */
+.snap{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow); padding:8px 26px}
+.snap .snap-h{font-family:"Schibsted Grotesk",sans-serif; font-size:11px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); padding:20px 0 4px}
+.srow{display:flex; align-items:center; justify-content:space-between; gap:16px; padding:16px 0; border-top:1px solid var(--line-2)}
+.srow .st{font-size:14.5px; font-weight:500; line-height:1.3}
+.srow .badge{flex:0 0 auto; font-family:"Schibsted Grotesk",sans-serif; font-size:10.5px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; padding:5px 11px; border-radius:100px; white-space:nowrap}
+.badge.ok{color:var(--good); background:var(--good-bg); border:1px solid var(--good-line)}
+.badge.no{color:var(--alert); background:var(--alert-bg); border:1px solid var(--alert-line)}
+
+/* stance columns */
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:24px}
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r); box-shadow:var(--shadow-sm); padding:30px}
+.panel .plabel{display:inline-flex; align-items:center; gap:8px; font-family:"Schibsted Grotesk",sans-serif; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; margin-bottom:22px}
+.panel .plabel::before{content:""; width:9px; height:9px; border-radius:50%}
+.panel.good .plabel{color:var(--good)} .panel.good .plabel::before{background:var(--good)}
+.panel.bad .plabel{color:var(--alert)} .panel.bad .plabel::before{background:var(--alert)}
+.plist{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:17px}
+.plist li{font-size:15px; line-height:1.5; color:var(--ink-2); padding-left:20px; position:relative}
+.plist li::before{content:""; position:absolute; left:0; top:9px; width:7px; height:7px; border-radius:50%; background:var(--line)}
+.panel.good .plist li::before{background:var(--good)}
+.panel.bad .plist li::before{background:var(--alert)}
+
+/* priorities */
+.pcard{background:var(--surface); border:1px solid var(--line); border-radius:18px; box-shadow:var(--shadow);
+  padding:40px; display:grid; grid-template-columns:1.08fr .92fr; gap:44px; align-items:center; margin-bottom:24px}
+.tagrow{display:flex; align-items:center; gap:14px; margin-bottom:18px}
+.pnum{font-family:"Schibsted Grotesk",sans-serif; font-size:12px; font-weight:600; letter-spacing:.05em; color:var(--rose)}
+.tagdiv{width:1px; height:14px; background:var(--line)}
+.pcard h3{font-size:24px; line-height:1.15; margin-bottom:16px}
+.pcard .ptext{font-size:15.5px; line-height:1.6; color:var(--ink-2)}
+.pcard .ptext strong{color:var(--ink)}
+.gets{margin:22px 0 0; padding:22px 0 0; border-top:1px solid var(--line-2); list-style:none; display:flex; flex-direction:column; gap:13px}
+.gets li{display:flex; gap:12px; align-items:flex-start; font-size:14.5px; color:var(--ink-2); line-height:1.45}
+.chk{flex:0 0 auto; width:20px;height:20px;border-radius:50%; background:var(--good-bg); border:1px solid var(--good-line); color:var(--good); display:grid;place-items:center;font-size:11px;font-weight:700;margin-top:1px}
+.gets li strong{color:var(--ink)}
+
+/* journey */
+.journey{background:var(--surface-2); border:1px solid var(--line); border-radius:var(--r); padding:26px 22px}
+.jflow{display:flex; align-items:flex-start}
+.jstep{flex:1; text-align:center; min-width:0}
+.jstep .ji{width:42px;height:42px;border-radius:50%; margin:0 auto 10px; display:grid;place-items:center; font-size:17px;
+  background:var(--surface); border:1.5px solid var(--good); color:var(--good)}
+.jstep .jt{font-size:12px; font-weight:600; color:var(--ink-2)}
+.jconn{flex:0 0 22px; margin-top:20px; height:2px; background:var(--good); border-radius:2px}
+.jconn.broken{background:transparent; border-top:2px dashed var(--alert)}
+.jstep.gap .ji{border-color:var(--alert); color:var(--alert); background:var(--alert-bg)}
+.jnote{margin-top:20px; padding-top:18px; border-top:1px solid var(--line); display:flex; gap:11px; align-items:flex-start; font-size:13px; color:var(--muted); line-height:1.45}
+.jnote .pill{flex:0 0 auto; font-family:"Schibsted Grotesk",sans-serif; font-size:10px; font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--alert); background:var(--alert-bg); border:1px solid var(--alert-line); padding:4px 9px; border-radius:100px}
+.jfix{margin-top:12px; font-size:13.5px; color:var(--good); font-weight:600; display:flex; gap:9px; align-items:center}
+
+/* reviews stat */
+.rstat{background:var(--surface-2); border:1px solid var(--line); border-radius:var(--r); padding:34px 26px; text-align:center}
+.rstat .big{font-family:"Schibsted Grotesk",sans-serif; font-size:60px; line-height:1; color:var(--rose); font-weight:700; letter-spacing:-.04em}
+.rstat .stars{color:var(--rose); font-size:16px; letter-spacing:4px; margin:10px 0 6px}
+.rstat .sub{font-size:13.5px; color:var(--muted)}
+.rstat .div{height:1px; background:var(--line); margin:22px 0}
+.rstat .n2{font-family:"Schibsted Grotesk",sans-serif; font-size:32px; color:var(--ink); font-weight:700; letter-spacing:-.03em}
+
+/* roadmap */
+.road{display:grid; grid-template-columns:repeat(3,1fr); gap:22px}
+.phase{padding-top:22px; border-top:2px solid var(--rose)}
+.phase .pk{font-family:"Schibsted Grotesk",sans-serif; font-size:12px; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--rose)}
+.phase .pw{font-size:12.5px; color:var(--muted); margin:3px 0 16px}
+.phase h3{font-size:19px; margin-bottom:11px; line-height:1.2}
+.phase p{font-size:14.5px; color:var(--muted); line-height:1.55}
+
+/* audit CTA */
+.audit{padding:6px 0 76px}
+.audit .box{background:var(--surface); border:1px solid var(--line); border-radius:20px; box-shadow:var(--shadow);
+  padding:52px 48px; display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center}
+.audit .eyebrow{display:block; margin-bottom:16px}
+.audit h2{font-size:clamp(24px,3vw,32px); line-height:1.12; max-width:20ch; margin-bottom:16px}
+.audit p{color:var(--ink-2); font-size:16px; max-width:52ch}
+.audit p strong{color:var(--ink)}
+.audit .side{display:flex; flex-direction:column; align-items:center; gap:8px; text-align:center; padding-left:40px; border-left:1px solid var(--line)}
+.audit .side .free{font-family:"Schibsted Grotesk",sans-serif; font-weight:700; font-size:26px; color:var(--rose); letter-spacing:-.02em}
+.audit .side .win{font-size:12.5px; color:var(--muted); letter-spacing:.08em; text-transform:uppercase; font-weight:600}
+.audit .side .turn{font-family:"Schibsted Grotesk",sans-serif; font-size:22px; font-weight:700; color:var(--ink)}
+.sig{border-top:1px solid var(--line); padding:26px 0 40px; text-align:center; font-size:12.5px; color:var(--muted); letter-spacing:.04em}
+
+@media (max-width:880px){
+  .hero .wrap{grid-template-columns:1fr; gap:40px; padding-top:52px}
+  .cols{grid-template-columns:1fr}
+  .pcard{grid-template-columns:1fr; gap:30px; padding:30px}
+  .road{grid-template-columns:1fr; gap:26px}
+  .audit .box{grid-template-columns:1fr; gap:28px; padding:36px 30px}
+  .audit .side{padding-left:0; border-left:0; border-top:1px solid var(--line); padding-top:24px; flex-direction:row; justify-content:center; gap:20px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <div class="mark" aria-hidden="true"></div>
+      <div><b>Rose MedSpa &amp; Wellness</b><span>Growth &amp; Measurement Plan</span></div>
+    </div>
+    <div class="tag">Prepared for Dr. India</div>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Growth &amp; Measurement Plan</span>
+      <h1>Clarity on what actually <span class="accent">books appointments</span>.</h1>
+      <p class="lede">Rose MedSpa already has a <strong>5.0 reputation</strong> and a steady flow of content. The missing piece is seeing what your marketing truly produces, then turning it into <strong>more booked appointments</strong>.</p>
+    </div>
+    <aside class="snap" aria-label="Your marketing today">
+      <div class="snap-h">Your marketing today</div>
+      <div class="srow"><span class="st">5.0 rating from 175 patients</span><span class="badge ok">Strong</span></div>
+      <div class="srow"><span class="st">Active on Facebook and Instagram</span><span class="badge ok">Strong</span></div>
+      <div class="srow"><span class="st">Ads linked to booked appointments</span><span class="badge no">Missing</span></div>
+      <div class="srow"><span class="st">Reviews working inside your marketing</span><span class="badge no">Missing</span></div>
+    </aside>
+  </div>
+</div>
+
+<!-- STANCE -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where you stand</span>
+      <h2>A strong foundation, with a few quiet gaps.</h2>
+      <p class="sub">The parts most practices struggle to build are already in place. A handful of gaps are holding back the growth you should be getting.</p>
+    </div>
+    <div class="cols">
+      <div class="panel good">
+        <div class="plabel">Working for you</div>
+        <ul class="plist">
+          <li>A <strong>5.0 rating across 175 real patients</strong>, the kind of trust that cannot be bought.</li>
+          <li>A <strong>steady stream of content</strong> already flowing across your channels.</li>
+          <li>Ads that are <strong>live and reaching</strong> people in your local area.</li>
+        </ul>
+      </div>
+      <div class="panel bad">
+        <div class="plabel">Holding growth back</div>
+        <ul class="plist">
+          <li>You see clicks and leads, but <strong>not which ad or post actually booked the appointment</strong>.</li>
+          <li>Your ads run a <strong>single offer</strong>, so there is little to learn from and little to scale.</li>
+          <li>Your reviews and content are <strong>not being turned into new bookings</strong>.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIORITIES -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Where we start</span>
+      <h2>Two priorities that move the needle first.</h2>
+      <p class="sub">Not everything at once. These two changes make every decision that follows easier and clearer.</p>
+    </div>
+
+    <article class="pcard">
+      <div>
+        <div class="tagrow"><span class="pnum">Priority 01</span><span class="tagdiv"></span><span class="eyebrow">Measurement</span></div>
+        <h3>See exactly what books appointments</h3>
+        <p class="ptext">Right now your booking happens in a different place from where your ads live, and the pieces that tie them together are missing. So when a patient books, <strong>the credit never makes it back to the ad or post that earned it</strong>. We connect the full path, from the first click to the confirmed appointment, so every dollar and every post is judged by the one thing that matters: <strong>booked appointments</strong>.</p>
+        <ul class="gets">
+          <li><span class="chk" aria-hidden="true">&#10003;</span><span>A clear view of your <strong>cost per booked appointment</strong>, not just cost per click.</span></li>
+          <li><span class="chk" aria-hidden="true">&#10003;</span><span>Which campaigns and offers actually <strong>fill your calendar</strong>.</span></li>
+          <li><span class="chk" aria-hidden="true">&#10003;</span><span>A <strong>weekly report in plain language</strong>, not a wall of clicks and likes.</span></li>
+        </ul>
+      </div>
+      <div class="journey" aria-label="The path from ad to booking">
+        <div class="jflow">
+          <div class="jstep"><div class="ji" aria-hidden="true">&#9788;</div><div class="jt">Ad seen</div></div>
+          <div class="jconn"></div>
+          <div class="jstep"><div class="ji" aria-hidden="true">&#128070;</div><div class="jt">Click</div></div>
+          <div class="jconn"></div>
+          <div class="jstep"><div class="ji" aria-hidden="true">&#9993;</div><div class="jt">Lead</div></div>
+          <div class="jconn broken"></div>
+          <div class="jstep gap"><div class="ji" aria-hidden="true">&#128197;</div><div class="jt">Booked</div></div>
+        </div>
+        <div class="jnote"><span class="pill">The gap</span><span>Today the trail goes cold right before the booking, so you cannot tell which marketing earned it.</span></div>
+        <div class="jfix"><span aria-hidden="true">&#10003;</span><span>We close this gap so the full path is visible.</span></div>
+      </div>
+    </article>
+
+    <article class="pcard">
+      <div>
+        <div class="tagrow"><span class="pnum">Priority 02</span><span class="tagdiv"></span><span class="eyebrow">Reputation</span></div>
+        <h3>Turn 175 five-star reviews into bookings</h3>
+        <p class="ptext">A <strong>5.0 rating from 175 patients</strong> is the most persuasive thing you own, and right now it mostly sits on Google. We put that trust to work: real patient words and results shown in your ads, on your website, and across your social, so new patients arrive <strong>already believing in you</strong>.</p>
+        <ul class="gets">
+          <li><span class="chk" aria-hidden="true">&#10003;</span><span><strong>Review-led ads</strong> that lead with real patient voices.</span></li>
+          <li><span class="chk" aria-hidden="true">&#10003;</span><span>Reviews shown <strong>where patients decide</strong>, not hidden away.</span></li>
+          <li><span class="chk" aria-hidden="true">&#10003;</span><span>A simple system so <strong>fresh reviews keep feeding</strong> your marketing.</span></li>
+        </ul>
+      </div>
+      <div class="rstat" aria-label="Reputation snapshot">
+        <div class="big">5.0</div>
+        <div class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="sub">Average patient rating</div>
+        <div class="div"></div>
+        <div class="n2">175</div>
+        <div class="sub">real reviews, ready to work harder</div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ROADMAP -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The plan</span>
+      <h2>A simple roadmap, built in order.</h2>
+      <p class="sub">Each phase sets up the next, so your decisions get easier and more confident as we go.</p>
+    </div>
+    <div class="road">
+      <div class="phase">
+        <div class="pk">Phase 1</div>
+        <div class="pw">First weeks</div>
+        <h3>Get the measurement right</h3>
+        <p>Connect tracking from click to booked appointment so results are finally visible, and tidy up the current ad setup.</p>
+      </div>
+      <div class="phase">
+        <div class="pk">Phase 2</div>
+        <div class="pw">Once we can see clearly</div>
+        <h3>Put your reputation to work</h3>
+        <p>Launch review-led ads, add offers beyond the single one, and test what your local audience responds to.</p>
+      </div>
+      <div class="phase">
+        <div class="pk">Phase 3</div>
+        <div class="pw">Ongoing</div>
+        <h3>Grow reach and repeat</h3>
+        <p>Scale what books appointments, grow your local following, and report on what matters every single week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE AUDIT -->
+<div class="audit">
+  <div class="wrap">
+    <div class="box">
+      <div>
+        <span class="eyebrow">Where we begin</span>
+        <h2>Start with a free audit of your setup.</h2>
+        <p>Before anything else, I will put together a <strong>free audit</strong> of your current marketing and tracking, showing exactly where booked appointments are being lost today and the first fixes that will change it. No cost, and yours to keep either way.</p>
+      </div>
+      <div class="side">
+        <div class="win">Delivered within</div>
+        <div class="free">24 to 48 hrs</div>
+        <div class="win" style="margin-top:6px">Cost to you</div>
+        <div class="turn">Free</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sig">Prepared for Rose MedSpa &amp; Wellness &middot; Troy, Illinois</div>
+
+</body>
+</html>
